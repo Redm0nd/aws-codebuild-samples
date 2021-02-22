@@ -6,6 +6,7 @@ phases:
       nodejs: 10
   build:
     commands:
+      - npm install
       - echo Building the Node code...
       - npm run test
 
