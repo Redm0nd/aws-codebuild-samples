@@ -3,15 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      golang: 1.13
       nodejs: 10
   build:
     commands:
-      - echo Building the Go code...
-      - cd $CODEBUILD_SRC_DIR/golang-app
-      - go build hello.go 
       - echo Building the Node code...
-      - cd $CODEBUILD_SRC_DIR/nodejs-app
       - npm run test
 
 artifacts:
