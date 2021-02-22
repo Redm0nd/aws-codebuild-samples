@@ -2,14 +2,12 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 10
+    commands:
+      - ls
+      - npm install -g serverless
   build:
     commands:
-      - npm install
-      - echo Building the Node code...
-      - npm run test
-
-artifacts:
-  files:
-    - '**/*'
+      - npm install --only=dev
+  post_build:
+    commands:
+      - serverless deploy --stage dev --package 4266-MyCertification-sls-pkg-dev --force
