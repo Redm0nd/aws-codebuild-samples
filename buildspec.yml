@@ -12,4 +12,5 @@ phases:
       - npm install
   post_build:
     commands:
-      - serverless deploy --stage dev --package 4266-MyCertification-sls-pkg-dev --force
+     # - serverless deploy --stage dev --package 4266-MyCertification-sls-pkg-dev --force
+      - echo hello
